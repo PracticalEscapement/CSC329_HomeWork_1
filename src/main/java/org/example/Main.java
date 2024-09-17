@@ -28,7 +28,15 @@ public class Main {
         pql2.addHouse(house3);
         pql2.addHouse(house4);
 
-        System.out.println(pql2.getMostExpensive().getValue());
+//        pql2.show();
+//
+//        System.out.println(pql2.getMostExpensive().getValue());
+//
+//        pql2.show();
+//
+//        System.out.println(pql2.getMostExpensive().getValue());
+//
+//        pql2.show();
 
         PriorityQueueList pql2Copy = new PriorityQueueList(pql2);
         pql2.show();
@@ -53,10 +61,21 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        System.out.println(pql.getMostExpensive().getValue());
-        pql.show();
+
         PriorityQueueList pqlCopy = new PriorityQueueList(pql);
-        pqlCopy.show();
+        System.out.println("\n\n\n\n");
+        System.out.println(pql.getMostExpensive().getValue());
+        System.out.println(pqlCopy.getMostExpensive().getValue());
+        System.out.println(pql.getMostExpensive().getValue());
+
+        System.out.println(pql);
+        System.out.println(pqlCopy);
+
+        System.out.println(pql.getLength());
+        System.out.println(pqlCopy.getMostExpensive().getValue());
+        System.out.println(pqlCopy.getLength());
+
+
 
     }
 }
