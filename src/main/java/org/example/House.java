@@ -24,8 +24,8 @@ public class House {
     }
 
     // House Deep Copy
-    public House deepCopy(House house) {
-        return new House(house.getOwner(), house.getValue());
+    public House deepCopy() {
+        return new House(this.getOwner(), this.getValue());
     }
 
     public String getOwner() {

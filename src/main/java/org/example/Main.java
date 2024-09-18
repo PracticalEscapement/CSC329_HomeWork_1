@@ -4,12 +4,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Main Class where code is executed in main method
+ */
 public class Main {
     public static void main(String[] args) {
 
         PriorityQueueList pql2 = new PriorityQueueList();
         House house1 = new House("Mike", 1);
-        House house1Copy = house1.deepCopy(house1);
+        House house1Copy = house1.deepCopy();
         System.out.println(house1);
         System.out.println(house1Copy);
 
@@ -28,24 +31,44 @@ public class Main {
         pql2.addHouse(house3);
         pql2.addHouse(house4);
 
-//        pql2.show();
-//
-//        System.out.println(pql2.getMostExpensive().getValue());
-//
-//        pql2.show();
-//
-//        System.out.println(pql2.getMostExpensive().getValue());
-//
-//        pql2.show();
+        PriorityQueueList pql3 = new PriorityQueueList();
+        pql3.addHouse(houseB);
+        pql3.addHouse(house1);
+        pql3.addHouse(house2);
+        pql3.addHouse(house3);
+        pql3.addHouse(house4);
+
+        pql2.show();
+
+        System.out.println(pql2.getMostExpensive().getValue());
+
+        pql2.show();
+
+        System.out.println(pql2.getMostExpensive().getValue());
+
+        pql2.show();
 
         PriorityQueueList pql2Copy = new PriorityQueueList(pql2);
         pql2.show();
         pql2Copy.show();
 
+        System.out.println(pql2.equals(pql2Copy));
+        System.out.println(pql2.getLength());
+
+        System.out.println(pql3.getLength());
+        pql2.show();
+        pql3.show();
+        PriorityQueueList pql3Copy = pql3.deepCopy();
+        pql3Copy.getMostExpensive();
+        pql3Copy.getMostExpensive();
+        pql3Copy.getMostExpensive();
+        pql3Copy.show();
+
 
 
         PriorityQueueList pql = new PriorityQueueList();
 
+        // Reading input.txt file
         try {
             File file = new File("input.txt");
             Scanner scanner = new Scanner(file);
@@ -75,6 +98,9 @@ public class Main {
         System.out.println(pqlCopy.getMostExpensive().getValue());
         System.out.println(pqlCopy.getLength());
 
+        System.out.println(pql.equals(pql2Copy));
+        PriorityQueueList pqlDeepCopy = pql.deepCopy();
+        System.out.println(pql.equals(pqlDeepCopy));
 
 
     }
