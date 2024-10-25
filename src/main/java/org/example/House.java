@@ -52,4 +52,8 @@ public class House {
         return value == house.value && Objects.equals(owner, house.owner);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(owner, value);
+    }
 }
